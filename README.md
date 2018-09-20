@@ -28,7 +28,15 @@ Extract the RSA public key from der file and save it in a pem file.
 Get the module and the exponent.   
 `openssl rsa -in pub.pem -pubin -modulus –noout`   
 Extract public key from all pcap files.
-* ***Step2: Find the gcd of all public key***   
+* ***Step2: Find the gcd of all public key***  
+>> **Why use gcd to break RSA?**    
+**Case 1:** Four different primes: a, b, c, d.    
+n1 = a × b   
+n2 = c × d     
+gcd(n1, n2)=1, n1 and n2 must be relatively prime to each other -> hard to know a,b,c,d   
+**Case 2:** Three different primes: a, b, c.   
+gcd(n1, n2)=b -> easy to know a,b,c ( a = n1 / b and c = n2 / b)   
+
 Find the gcd of https3 file and https8 file is not equal to 1.
 * ***Step3: Try to get private key from .pcapng file***   
 Use get_private.py to get private key from http3.pcapng and http8.pcapng.
