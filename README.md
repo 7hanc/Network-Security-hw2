@@ -39,7 +39,12 @@ gcd(n1, n2)=b -> easy to know a,b,c ( a = n1 / b and c = n2 / b)
 
 Find the gcd of https3 file and https8 file is not equal to 1.
 * ***Step3: Try to get private key from .pcapng file***   
-Use get_private.py to get private key from http3.pcapng and http8.pcapng.
+>> Public key: (N,e)   
+Private key: (N,d)   
+N=p*q   
+d%e=1 (mod(p-1)(q-1))   
+Known: **N**, **e**   
+Use get_private.py to get **p**, **q** and know private key **d** from http3.pcapng and http8.pcapng.
 * ***Step4: Import the private key into .pcapng file***   
 In http3.pcapng, we can get the data in zip format.
 * ***Step5: Get the password in websocket.pcapng***   
