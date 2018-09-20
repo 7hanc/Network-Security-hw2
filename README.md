@@ -20,7 +20,7 @@ Alice and Bob were talking about an important case of their company. They use we
   * 12 HTTPs traffic pcapng files
 
 > Answer
-* ***Step1: Find the public key***  
+* ***Step1: Find the public key***     
 For one pcap file:   
 Find the Certificate under Handshake Protocol and save as der file.   
 Extract the RSA public key from der file and save it in a pem file.   
@@ -28,10 +28,10 @@ Extract the RSA public key from der file and save it in a pem file.
 Get the module and the exponent.   
 `openssl rsa -in pub.pem -pubin -modulus –noout`   
 Extract public key from all pcap files.
-* ***Step2: Find the gcd of all public key***
+* ***Step2: Find the gcd of all public key***   
 Find the gcd of https3 file and https8 file is not equal to 1.
-* ***Step3: Try to get private key from .pcapng file***
+* ***Step3: Try to get private key from .pcapng file***   
 Use get_private.py to get private key from http3.pcapng and http8.pcapng.
-* ***Step4: Import the private key into .pcapng file***
+* ***Step4: Import the private key into .pcapng file***   
 In http3.pcapng, we can get the data in zip format.
-* ***Step5: Get the password in websocket.pcapng***
+* ***Step5: Get the password in websocket.pcapng***   
